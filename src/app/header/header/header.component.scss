@@ -1,0 +1,24 @@
+.mat-toolbar.mat-primary {
+  display: flex;
+  justify-content: space-between;
+}
+.material-icons {
+  line-height: 1.5;
+}
+.username{
+  display: flex;
+  align-items: center;
+  .example-spacer {
+    margin-left: 15px;
+  }
+}
+.title{
+  display: flex;
+  align-items: center;
+  img{
+    width: 30px;
+    height: 40px;
+    margin-left: 15px;
+  }
+}
+

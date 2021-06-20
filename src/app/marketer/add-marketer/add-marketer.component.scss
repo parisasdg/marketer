@@ -1,0 +1,68 @@
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  .title {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    font-weight: 400;
+    font-size: 30px;
+  }
+  .input-container .mat-form-field + .mat-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+  }
+
+  ::ng-deep.mat-form-field-flex {
+    background-color: white !important;
+    text-align: right;
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .mat-card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mat-form-field {
+    width: 90%;
+  }
+  .example-button-row {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 10px 0;
+
+    button {
+      width: 95%;
+      font-size: 20px;
+    }
+  }
+  .example-button-back {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+
+
+    button {
+      width: 95%;
+      font-size: 20px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}

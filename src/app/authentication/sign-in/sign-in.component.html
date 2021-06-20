@@ -1,0 +1,39 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="100%" (window:resize)="onResize($event)">
+  <mat-grid-tile class="gif-text"
+                 [colspan]="breakpoint === 10 ? 6 : 0"
+                 [rowspan]="1">
+    <img src="assets/image/d365faa08ffdb847c21eda499c22f2ae.jpg">
+  </mat-grid-tile>
+  <mat-grid-tile class="gif-sign-in"
+                 [colspan]="breakpoint === 10 ? 4 : 1"
+                 [rowspan]="1">
+    <div class="input-container">
+      <h2 class="title">ورود</h2>
+      <form [formGroup]="LoginForm" (ngSubmit)="Loginsubmit()">
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>تلفن همراه</mat-label>
+          <input matInput placeholder="09120227914" formControlName="PhoneNumber">
+          <mat-error *ngIf="PhoneNumber.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-style">
+       <div style="height: 8px;align-items: flex-start;display: flex" >
+         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label`]="'Hide password'"
+                 [attr.aria-pressed]="hide">
+           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+         </button>
+       </div>
+          <mat-label>رمز ورود</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+        </mat-form-field>
+        <div class="checkbox">
+          <span>به خاطر بسپار</span>
+          <mat-checkbox class="example-margin" [color]="task.color" ></mat-checkbox>
+        </div>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!LoginForm.valid">ورود</button>
+        </div>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

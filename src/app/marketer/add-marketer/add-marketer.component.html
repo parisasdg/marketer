@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="register-container">
+  <mat-card class="example-card">
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+    <mat-card-header>
+     <h2 class="title">ثبت نام</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>شماره تلفن</mat-label>
+          <input matInput placeholder="09120000000" formControlName="phoneNumber" autocomplete="off">
+          <mat-error *ngIf="phoneNumber.invalid">{{getErrorMessagePhoneNumber()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>رمز</mat-label>
+          <input matInput formControlName="password" autocomplete="off">
+          <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>نام کامل</mat-label>
+          <input matInput placeholder="پریسا صادقی" formControlName="fullName" autocomplete="off">
+          <mat-error *ngIf="fullName.invalid">{{getErrorMessageName()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>شهر</mat-label>
+          <input matInput placeholder="قزوین" formControlName="city" autocomplete="off">
+          <mat-error *ngIf="city.invalid">{{getErrorMessageCity()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>آدرس کامل</mat-label>
+          <input matInput placeholder="نوروزیان" formControlName="addressDetail" autocomplete="off">
+          <mat-error *ngIf="addressDetail.invalid">{{getErrorMessageAddress()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-style">
+          <mat-label>کد پستی</mat-label>
+          <input matInput placeholder="123456789" formControlName="zipPostalCode" autocomplete="off">
+          <mat-error *ngIf="zipPostalCode.invalid">{{getErrorMessagepostalcode()}}</mat-error>
+        </mat-form-field>
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">ثبت</button>
+      </div>
+      <div class="example-button-back">
+        <button mat-raised-button color="primary" type="submit"><a routerLink="../">بازگشت</a></button>
+      </div>
+    </mat-card-content>
+    </form>
+  </mat-card>
+</div>
